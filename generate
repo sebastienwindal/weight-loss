@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]
+  then
+    echo "You did not specify the csv file name. For instance: gnerate sally.csv"
+    echo "File is case sensitive."
+    exit 1
+fi
+
+FILEPREFIX=`echo $1 | sed "s/.csv$//g"`
+
+
+echo "Processing $FILEPREFIX.csv:"
+
+echo "=> Generating Training file $FILEPREFIX.train"
+
+lifestyle-csv2vw 3 $FILEPREFIX.csv | sort-by-abs > $FILEPREFIX.train
+
+echo "=> Running machine learning algorithm on the training file"
+
+OUTPUTFILE=`echo $FILEPREFIX.results.csv`
+
+
+
+# notes: 
+vw-varinfo2 -k --loss_function quantile --progress 1 --bootstrap 7 -l 0.05 --l2 1.85201e-08 -c --passes 4 $FILEPREFIX.train | grep -v "Constant," > $OUTPUTFILE
+
+echo "=> output generated and saved to $OUTPUTFILE"
+
+echo "=> adding frequency to output files"
+

@@ -403,8 +403,8 @@ def summarize():
     w_absmax = max(abs(wmin), abs(wmax))
 
     # Print a header
-    print(("%-16s\t%10s\t%s\t%s\t%s\t%s" %
-          ('FeatureName', 'HashVal', 'MinVal', 'MaxVal', 'Weight', 'RelScore')))
+    print(("%s,%s,%s,%s" %
+          ('FeatureName', 'Weight', 'RelScore', 'Frequency')))
 
     # TODO: implement multi-class
     # multi-class needs per-class internal data-structs
@@ -418,8 +418,8 @@ def summarize():
         fweight = float(F_WEIGHT[fname])
         fhash = F_HASH[fname]
         relscore = 100.0 * (fweight/w_absmax if w_absmax > 0 else 0.0)
-        print(("%-16s\t%10s\t%.2f\t%.2f\t%.2f\t%7.2f" %
-              (fname, fhash, fmin, fmax, fweight, relscore)))
+        print(("%s,%.2f,%.2f," %
+              (fname, fweight, relscore)))
 
 def pass1(vw_cmd):
     """In pass1 we run 'vw' as in the original command"""
