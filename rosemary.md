@@ -16,8 +16,8 @@ Create a csv file in that folder (for instance rosemary.csv) that uses the follo
 ```
 Date,MorningWeight,YesterdayFactors
 2018-08-03,104.8,start
-2018-08-04,105.1,salad badsleep cheese egg halfnhalf:1.5 stress travel
-2018-08-05,104.6,bacon soulcycle goodsleep wfh nuts:2 
+2018-08-04,105.5,salad badsleep cheese egg halfnhalf:1.5 stress travel croissant icecream
+2018-08-05,104.6,bacon soulcycle goodsleep wfh nuts:2 salad
 ```
 
 you can check ariel.csv for inspiration.
