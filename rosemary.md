@@ -5,7 +5,7 @@
 * install python2: `brew install python@2`
 * install vovpal wabbit: `brew install vowpal-wabbit`
 
-congrats you are now ready to use the thing.
+congrats you are now ready to use the thing. You don't need to ever run those thing on this machine, just the generate command part below.
 
 Create a csv file in that folder (for instance rosemary.csv) that uses the following format:
 
