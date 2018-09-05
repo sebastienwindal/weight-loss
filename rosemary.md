@@ -1,7 +1,9 @@
 # One time setup instructions:
 
-* git clone https://github.com/sebastienwindal/weight-loss
 * install brew: https://brew.sh
+* install git: brew install git
+* create a folder in the finder where the thig will live, and go there in the terminal (cd blah)
+* get the source code: git clone https://github.com/sebastienwindal/weight-loss
 * install python2: `brew install python@2`
 * install vovpal wabbit: `brew install vowpal-wabbit`
 
