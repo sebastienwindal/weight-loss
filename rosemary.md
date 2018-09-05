@@ -28,3 +28,5 @@ You generate the results by typing:
 `generate rosemary.csv`
 
 this will create a new file: `rosemary.results.csv` that contains the machine learning results.
+
+load it in your spreadsheet, to open in numbers, just type `open rosemary.results.csv`.
