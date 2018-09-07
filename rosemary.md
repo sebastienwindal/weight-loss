@@ -29,6 +29,22 @@ You generate the results by typing:
 
 `generate rosemary.csv`
 
+
 this will create a new file: `rosemary.results.csv` that contains the machine learning results.
 
 To open in numbers, just type `open rosemary.results.csv`.
+
+
+
+# terminal usage:
+
+in finder, applicatinos -> Utilities, open Terminal
+
+inside the terminal:
+
+* cd Desktop
+* cd Seb (hit tab for auto complete)
+
+some commands:
+- cd (change directory)
+- ls (list all files in current directory)
