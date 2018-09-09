@@ -9,13 +9,14 @@ fi
 
 FILEPREFIX=`echo $1 | sed "s/.csv$//g"`
 
-
 echo "Processing $FILEPREFIX.csv:"
 
+echo
 echo "=> Generating Training file $FILEPREFIX.train"
 
 lifestyle-csv2vw 3 $FILEPREFIX.csv | sort-by-abs > $FILEPREFIX.train
 
+echo
 echo "=> Running machine learning algorithm on the training file"
 
 OUTPUTFILE=`echo $FILEPREFIX.results.csv`
@@ -25,7 +26,11 @@ OUTPUTFILE=`echo $FILEPREFIX.results.csv`
 # notes: 
 vw-varinfo2 -k --loss_function quantile --progress 1 --bootstrap 7 -l 0.05 --l2 1.85201e-08 -c --passes 4 $FILEPREFIX.train | grep -v "Constant," > $OUTPUTFILE
 
-echo "=> output generated and saved to $OUTPUTFILE"
+echo
+echo "=> Adding frequency"
 
-echo "=> adding frequency to output files"
+add_frequencies.py $1 $OUTPUTFILE
 
+echo
+echo "=> Output generated and saved to $OUTPUTFILE"
+echo
