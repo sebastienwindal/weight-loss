@@ -11,6 +11,9 @@ FILEPREFIX=`echo $1 | sed "s/.csv$//g"`
 
 echo "Processing $FILEPREFIX.csv:"
 
+cat $FILEPREFIX.csv | perl -pe 's/\r/\n/g' > a.tmp
+mv a.tmp $FILEPREFIX.csv
+
 echo
 echo "=> Generating Training file $FILEPREFIX.train"
 
